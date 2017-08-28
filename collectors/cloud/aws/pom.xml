@@ -45,10 +45,27 @@
   </properties>
 
   <build>
+    <finalName>aws-cloud-collector</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+          <groupId>com.spotify</groupId>
+          <artifactId>docker-maven-plugin</artifactId>
+          <configuration>
+              <skipDockerBuild>false</skipDockerBuild>
+              <imageName>hygieia-${project.build.finalName}</imageName>
+              <dockerDirectory>${project.basedir}/docker</dockerDirectory>
+              <resources>
+                  <resource>
+                      <targetPath>/hygieia</targetPath>
+                      <directory>${project.build.directory}</directory>
+                      <include>${project.build.finalName}.jar</include>
+                  </resource>
+              </resources>
+          </configuration>
       </plugin>
     </plugins>
     <testResources>
