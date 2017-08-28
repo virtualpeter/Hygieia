@@ -45,7 +45,7 @@
   </properties>
 
   <build>
-    <finalName>hygieia-aws-cloud-collector</finalName>
+    <finalName>aws-cloud-collector</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
