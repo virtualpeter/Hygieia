@@ -5,6 +5,11 @@ if [ "$SKIP_PROPERTIES_BUILDER" = true ]; then
   exit 0
 fi
 
+# if set, use config file to pre-set env vars
+if [ "$API_CONFIG_FILE" ]; then
+  source $API_CONFIG_FILE
+fi
+
 # if we are linked, use that info
 if [ "$MONGO_STARTED" != "" ]; then
   # links now use hostnames
@@ -16,8 +21,11 @@ fi
 echo "SPRING_DATA_MONGODB_HOST: $SPRING_DATA_MONGODB_HOST"
 echo "SPRING_DATA_MONGODB_PORT: $SPRING_DATA_MONGODB_PORT"
 
+if [ "$MONGODB_PASSWORD_FILE" ]; then
+  MONGODB_PASSWORD=$(<$MONGODB_PASSWORD_FILE)
+fi
 
-cat > dashboard.properties <<EOF
+cat > api.properties <<EOF
 #Database Name - default is test
 dbname=${SPRING_DATA_MONGODB_DATABASE:-dashboard}
 

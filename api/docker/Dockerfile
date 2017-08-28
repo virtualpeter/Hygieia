@@ -9,9 +9,11 @@ ENV SPRING_DATA_MONGODB_PORT=9999
 ENV SPRING_DATA_MONGODB_USERNAME=db
 ENV SPRING_DATA_MONGODB_PASSWORD=ENC(aSPTk36yA/ZklUg75CrZ8w==)
 
+#Define Env variables to support swarm secrets and config
+ENV API_CONFIG_FILE
+ENV MONGODB_PASSWORD_FILE
 
-RUN \
-  mkdir /hygieia
+RUN  mkdir /hygieia
 
 COPY hygieia/ /hygieia
 COPY properties-builder.sh /hygieia/
@@ -22,4 +24,4 @@ VOLUME ["/hygieia/logs"]
 
 EXPOSE 8080
 CMD ./properties-builder.sh &&\
-  java -Djava.security.egd=file:/dev/./urandom -jar api.jar --spring.config.location=/hygieia/dashboard.properties
+  exec java -Djava.security.egd=file:/dev/./urandom -jar api.jar --spring.config.location=/hygieia/api.properties
