@@ -16,8 +16,10 @@ public interface CmdbRepository extends CrudRepository<Cmdb, ObjectId>  {
 
     Page<Cmdb> findAllByItemTypeAndConfigurationItemContainingIgnoreCaseAndValidConfigItem(String itemType, String configurationItem, Pageable pageable, boolean valid);
 
-    Cmdb findByConfigurationItemContainingIgnoreCase(String configurationItem);
+    Cmdb findByConfigurationItemIgnoreCase(String configurationItem);
 
     List<Cmdb> findAllByItemType(String type);
+
+    Cmdb findByConfigurationItemAndItemType(String confiugrationItem, String itemType);
 
 }
