@@ -45,7 +45,7 @@ aws:
   proxyPort: $AWS_PROXY_PORT
   nonProxy:  ${AWS_NO_PROXY:-169.254.169.254}
   profile:   
-  historyDays: ${HISTORY_DAYS:-28}
+  historyDays: ${AWS_HISTORY_DAYS:-28}
 EOF
 
 if [ -n "$VALID_TAG_KEYS" ]
