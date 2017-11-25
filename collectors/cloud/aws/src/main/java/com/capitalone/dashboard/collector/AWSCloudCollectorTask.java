@@ -134,8 +134,10 @@ public class AWSCloudCollectorTask extends CollectorTask<AWSCloudCollector> {
     }
 
     private Map<String, List<CloudInstance>> collectInstances() {
+        log(" - collect instances");
         Map<String, List<CloudInstance>> cloudInstanceMap = awsClient.getCloudInstances(cloudInstanceRepository);
         for (String account : cloudInstanceMap.keySet()) {
+            log("  - account: " + account);
             Collection<CloudInstance> collectedInstances = cloudInstanceMap.get(account);
             Set<CloudInstance> saveList = new HashSet<>();
             Collection<CloudInstance> deleteList = cloudInstanceRepository.findByAccountNumber(account); //Potential Delete List
