@@ -3,9 +3,7 @@ FROM docker.io/openjdk:8-jre
 
 MAINTAINER Hygieia@capitalone.com
 
-RUN \
-
-  mkdir  /hygieia
+RUN  mkdir  /hygieia
 
 COPY *.jar /hygieia/
 COPY jira-properties-builder.sh /hygieia/
