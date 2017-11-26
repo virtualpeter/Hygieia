@@ -14,5 +14,5 @@ WORKDIR /hygieia
 VOLUME ["/hygieia/logs"]
 
 CMD ./hpsm-properties-builder.sh && \
-  java -jar hspm-cmdb-collector*.jar --spring.config.location=/hygieia/hpsm.properties
+  java -jar hpsm-cmdb-collector*.jar --spring.config.location=/hygieia/hpsm.properties
 
