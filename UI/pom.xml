@@ -88,6 +88,16 @@
           </execution>
 
           <execution>
+            <id>npm update</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>update</arguments>
+            </configuration>
+          </execution>
+
+          <execution>
             <id>bower install</id>
             <goals>
               <goal>bower</goal>
