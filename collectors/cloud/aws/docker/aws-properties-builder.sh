@@ -38,7 +38,7 @@ dbpassword: ${HYGIEIA_API_ENV_SPRING_DATA_MONGODB_PASSWORD:-dbpass}
 
 aws:
   #Collector schedule (required)
-  cron=${SONAR_CRON:-0 0/30 * * * *}
+  cron=${AWS_CRON:-0 0/30 * * * *}
 
   #proxy so aws client can connect to aws api
   proxyHost: $AWS_PROXY_HOST
