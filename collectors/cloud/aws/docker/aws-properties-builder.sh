@@ -21,26 +21,15 @@ else
 fi
 
 cat > $PROP_FILE <<EOF
-#Database Name
-dbname: ${HYGIEIA_API_ENV_SPRING_DATA_MONGODB_DATABASE:-dashboard}
-
-#Database HostName
-dbhost: ${MONGODB_HOST:-mongo}
-
-#Database Port - default is 27017
-dbport: ${MONGODB_PORT:-27017}
-
-#Database Username - default is blank
+# generated $PROP_FILE
+dbname:     ${HYGIEIA_API_ENV_SPRING_DATA_MONGODB_DATABASE:-dashboard}
+dbhost:     ${MONGODB_HOST:-mongo}
+dbport:     ${MONGODB_PORT:-27017}
 dbusername: ${HYGIEIA_API_ENV_SPRING_DATA_MONGODB_USERNAME:-db}
-
-#Database Password - default is blank
 dbpassword: ${HYGIEIA_API_ENV_SPRING_DATA_MONGODB_PASSWORD:-dbpass}
 
 aws:
-  #Collector schedule (required)
-  cron=${AWS_CRON:-0 0/30 * * * *}
-
-  #proxy so aws client can connect to aws api
+  cron:      ${AWS_CRON:-0 0/30 * * * *}
   proxyHost: $AWS_PROXY_HOST
   proxyPort: $AWS_PROXY_PORT
   nonProxy:  ${AWS_NO_PROXY:-169.254.169.254}
