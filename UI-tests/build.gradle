@@ -1,0 +1,8 @@
+
+description = 'com.capitalone.dashboard:ui-tests'
+dependencies {
+    compile group: 'net.serenity-bdd', name: 'serenity-core', version:'1.2.2'
+    compile group: 'net.serenity-bdd', name: 'serenity-jbehave', version:'1.21.0'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.2.5.RELEASE'
+    compile group: 'org.apache.commons', name: 'commons-exec', version:'1.3'
+}

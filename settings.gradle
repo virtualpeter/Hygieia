@@ -1,0 +1,54 @@
+rootProject.name = 'Hygieia'
+include ':core'
+include ':api'
+include ':api-audit'
+include ':artifactory-artifact-collector'
+include ':bamboo-build-collector'
+include ':jenkins-build-collector'
+include ':jenkins-cucumber-test-collector'
+include ':jenkins-codequality'
+include ':sonar-codequality-collector'
+include ':aws-cloud-collector'
+include ':udeploy-deployment-collector'
+include ':xldeploy-deployment-collector'
+include ':jira-feature-collector'
+include ':versionone-feature-collector'
+include ':gitlab-feature-collector'
+include ':chat-ops-collector'
+include ':appdynamics-performance-collector'
+include ':bitbucket-scm-collector'
+include ':github-scm-collector'
+include ':github-graphql-scm-collector'
+include ':subversion-collector'
+include ':gitlab-scm-collector'
+include ':hpsm-cmdb-collector'
+include ':nexus-iq-collector'
+include ':UI'
+include ':ui-tests'
+
+project(':core').projectDir = "$rootDir/core" as File
+project(':api').projectDir = "$rootDir/api" as File
+project(':api-audit').projectDir = "$rootDir/api-audit" as File
+project(':artifactory-artifact-collector').projectDir = "$rootDir/collectors/artifact/artifactory" as File
+project(':bamboo-build-collector').projectDir = "$rootDir/collectors/build/bamboo" as File
+project(':jenkins-build-collector').projectDir = "$rootDir/collectors/build/jenkins" as File
+project(':jenkins-cucumber-test-collector').projectDir = "$rootDir/collectors/build/jenkins-cucumber" as File
+project(':jenkins-codequality').projectDir = "$rootDir/collectors/build/jenkins-codequality" as File
+project(':sonar-codequality-collector').projectDir = "$rootDir/collectors/build/sonar" as File
+project(':aws-cloud-collector').projectDir = "$rootDir/collectors/cloud/aws" as File
+project(':udeploy-deployment-collector').projectDir = "$rootDir/collectors/deploy/udeploy" as File
+project(':xldeploy-deployment-collector').projectDir = "$rootDir/collectors/deploy/xldeploy" as File
+project(':jira-feature-collector').projectDir = "$rootDir/collectors/feature/jira" as File
+project(':versionone-feature-collector').projectDir = "$rootDir/collectors/feature/versionone" as File
+project(':gitlab-feature-collector').projectDir = "$rootDir/collectors/feature/gitlab" as File
+project(':chat-ops-collector').projectDir = "$rootDir/collectors/misc/chat-ops" as File
+project(':appdynamics-performance-collector').projectDir = "$rootDir/collectors/performance/appdynamics" as File
+project(':bitbucket-scm-collector').projectDir = "$rootDir/collectors/scm/bitbucket" as File
+project(':github-scm-collector').projectDir = "$rootDir/collectors/scm/github" as File
+project(':github-graphql-scm-collector').projectDir = "$rootDir/collectors/scm/github-graphql" as File
+project(':subversion-collector').projectDir = "$rootDir/collectors/scm/subversion" as File
+project(':gitlab-scm-collector').projectDir = "$rootDir/collectors/scm/gitlab" as File
+project(':hpsm-cmdb-collector').projectDir = "$rootDir/collectors/cmdb/hpsm" as File
+project(':nexus-iq-collector').projectDir = "$rootDir/collectors/library-policy/nexus-iq-collector" as File
+project(':UI').projectDir = "$rootDir/UI" as File
+project(':ui-tests').projectDir = "$rootDir/UI-tests" as File
