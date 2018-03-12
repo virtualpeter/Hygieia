@@ -52,3 +52,7 @@ project(':hpsm-cmdb-collector').projectDir = "$rootDir/collectors/cmdb/hpsm" as 
 project(':nexus-iq-collector').projectDir = "$rootDir/collectors/library-policy/nexus-iq-collector" as File
 project(':UI').projectDir = "$rootDir/UI" as File
 project(':ui-tests').projectDir = "$rootDir/UI-tests" as File
+
+
+enableFeaturePreview("IMPROVED_POM_SUPPORT")
+
