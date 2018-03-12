@@ -1,0 +1,16 @@
+plugins {
+  id "com.moowork.gulp" version "1.2.0"
+}
+
+description = 'Hygieia UI module'
+
+
+// run npm install
+gulp_default.dependsOn 'npmInstall'
+
+// run gulp install
+gulp_default.dependsOn 'installGulp'
+
+
+// runs "gulp build" as part of your gradle build
+build.dependsOn gulp_build
