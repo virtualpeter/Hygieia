@@ -1,3 +1,7 @@
+//plugins {
+  //id "com.craigburke.bower-installer" version "2.5.1"
+//}
+
 plugins {
   id "com.moowork.gulp" version "1.2.0"
 }
@@ -5,12 +9,14 @@ plugins {
 description = 'Hygieia UI module'
 
 
-// run npm install
-gulp_default.dependsOn 'npmInstall'
+// Install the bower components for front-end library management
+task bowerInstall(dependsOn: 'npmInstall', type: Exec){
+    commandLine "bower", 'install'
+}
 
-// run gulp install
-gulp_default.dependsOn 'installGulp'
+gulp_build.dependsOn 'bowerInstall'
+
+gulp_build.dependsOn 'installGulp'
 
 
-// runs "gulp build" as part of your gradle build
 build.dependsOn gulp_build
