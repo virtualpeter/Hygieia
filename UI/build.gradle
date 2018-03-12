@@ -1,13 +1,19 @@
-//plugins {
-  //id "com.craigburke.bower-installer" version "2.5.1"
-//}
 
 plugins {
   id "com.moowork.gulp" version "1.2.0"
 }
 
+apply plugin: 'distribution'
+
 description = 'Hygieia UI module'
 
+distributions {
+    main {
+        contents {
+            from { 'dist' }
+        }
+    }
+}
 
 // Install the bower components for front-end library management
 task bowerInstall(dependsOn: 'npmInstall', type: Exec){
