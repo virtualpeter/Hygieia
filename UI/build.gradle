@@ -25,4 +25,6 @@ gulp_build.dependsOn 'bowerInstall'
 gulp_build.dependsOn 'installGulp'
 
 
+distTar.dependsOn gulp_build
 build.dependsOn gulp_build
+build.dependsOn distTar
